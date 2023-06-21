@@ -35,7 +35,7 @@ app.use((req,res,next)=>{
     next()
 })
 
-//Pantilla
+//Plantilla
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
