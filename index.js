@@ -39,6 +39,7 @@ app.use((req,res,next)=>{
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
+//Rutas
 
 
 //Cualquier url no definida envia este mensaje
