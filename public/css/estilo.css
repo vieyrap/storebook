@@ -1,0 +1,29 @@
+/* IMPORTAR FONT */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+/* ELIMINAR PARAMETROS POR DEFAULT */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    border: 0;
+    background-color: unset;
+}
+
+input {
+    outline: none;
+    border: 0;
+}
+
+li {
+    list-style: none;
+}
+
+/* ESTILOS PROPIOS */
+body {
+    font-family: 'Quicksand', sans-serif;
+    color: #36352d !important;
+    background-color: #f5f4e8;
+}
