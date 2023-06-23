@@ -48,6 +48,42 @@ app.get('/',(req,res)=>{
     res.render('pages/home.ejs')
 })
 
+//Buscar
+app.get('/buscar',(req,res)=>{
+    res.render('pages/buscar.ejs')
+})
+
+//Catalogo
+app.get('/catalogo',(req,res)=>{
+    res.render('pages/catalogo.ejs')
+})
+
+//Catalogo
+app.get('/nosotros',(req,res)=>{
+    res.render('pages/nosotros.ejs')
+})
+
+//Registrar
+app.get('/registrar',(req,res)=>{
+    res.render('users/registrar.ejs')
+})
+
+//Login
+app.get('/login',(req,res)=>{
+    res.render('users/login.ejs')
+})
+
+//Login
+app.get('/favoritos',(req,res)=>{
+    res.render('users/favoritos.ejs')
+})
+
+//Checkout
+app.get('/checkout',(req,res)=>{
+    res.render('users/checkout.ejs')
+})
+
+
 //Cualquier url no definida envia este mensaje
 app.get('/*', (req,res)=>{
     res.status(404).json({mensaje:'La pagina no funciona'})
