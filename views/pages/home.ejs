@@ -1,127 +1,331 @@
 <%- include('../partials/header.ejs') %>
-<%- include('../partials/nav.ejs') %>
+    <%- include('../partials/nav.ejs') %>
 
-<main>
-    <!-- SECCION HERO -->
-    <section class="hero">
-        <div class="overlay-hero">
-            <h1>La tienda de libros más grande de Buenos Aires</h1>
-            <button type="button" class="col-3 btn-comprar-ahora mt-5 ">Compra ya</button>
-        </div>
-    </section>
-    <!-- SECCION TENDENCIAS -->
-    <section class="tending-books">
-        <h1>Tendencias</h1>
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="weather-card one">
-                        <div class="top">
-                            <div class="wrapper">
-                                <div class="mynav">
-                                    <a href="javascript:;"><span class="lnr lnr-chevron-left"></span></a>
-                                    <a href="javascript:;"><span class="lnr lnr-cog"></span></a>
+        <main>
+            <!-- SECCION HERO -->
+            <section class="hero">
+                <div class="overlay-hero">
+                    <h1>La tienda de libros más grande de Buenos Aires</h1>
+                    <button type="button" class="col-3 btn-comprar-ahora mt-4 ">Compra ya</button>
+                </div>
+            </section>
+            <!-- SECCION TENDENCIAS -->
+            <section class="tending-books">
+                <h2 class="titulo-seccion mb-4">Tendencias</h2>
+                <h3 class="titulo-seccion mb-4">Tendencias</h3>
+                <div class="d-flex justify-content-between">
+                    <div class="col-3 card card-libro">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                            <img class="img-fluid rounded-3" src="https://s3.amazonaws.com/mm-static-media/books/cover-art/9780545349222.jpeg"
+                                alt="Card image cap" />
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </a>
+                        </div>
+                        <div class="card-body pt-2">
+                            <div class="d-flex justify-content-between">
+                                <p class="mb-2">Autor del Libro</p>
+                                <div>
+                                    <i class="bi bi-bookmark"></i>
                                 </div>
-                                <h1 class="heading">Clear night</h1>
-                                <h3 class="location">Dhaka, Bangladesh</h3>
-                                <p class="temp">
-                                    <span class="temp-value">20</span>
-                                    <span class="deg">0</span>
-                                    <a href="javascript:;"><span class="temp-type">C</span></a>
-                                </p>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <p>Título del Libro</p>
+                                <div>
+                                    <p>$18</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="bottom">
-                            <div class="wrapper">
-                                <ul class="forecast">
-                                    <a href="javascript:;"><span class="lnr lnr-chevron-up go-up"></span></a>
-                                    <li class="active">
-                                        <span class="date">Yesterday</span>
-                                        <span class="lnr lnr-sun condition">
-                                            <span class="temp">23<span class="deg">0</span><span class="temp-type">C</span></span>
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <span class="date">Tomorrow</span>
-                                        <span class="lnr lnr-cloud condition">
-                                            <span class="temp">21<span class="deg">0</span><span class="temp-type">C</span></span>
-                                        </span>
-                                    </li>
-                                </ul>
+                    </div>
+                    <div class="col-3 card card-libro">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                            <img class="img-fluid rounded-3" src="https://s3.amazonaws.com/mm-static-media/books/cover-art/9780545349222.jpeg"
+                                alt="Card image cap" />
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </a>
+                        </div>
+                        <div class="card-body pt-2">
+                            <div class="d-flex justify-content-between">
+                                <p class="mb-2">Autor del Libro</p>
+                                <div>
+                                    <i class="bi bi-bookmark"></i>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <p>Autor del Libro</p>
+                                <div>
+                                    <p>$18</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 card card-libro">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                            <img class="img-fluid rounded-3" src="https://s3.amazonaws.com/mm-static-media/books/cover-art/9780545349222.jpeg"
+                                alt="Card image cap" />
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </a>
+                        </div>
+                        <div class="card-body pt-2">
+                            <div class="d-flex justify-content-between">
+                                <p class="mb-2">Autor del Libro</p>
+                                <div>
+                                    <i class="bi bi-bookmark"></i>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <p>Autor del Libro</p>
+                                <div>
+                                    <p>$18</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 card card-libro">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                            <img class="img-fluid rounded-3" src="https://s3.amazonaws.com/mm-static-media/books/cover-art/9780545349222.jpeg"
+                                alt="Card image cap" />
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </a>
+                        </div>
+                        <div class="card-body pt-2">
+                            <div class="d-flex justify-content-between">
+                                <p class="mb-2">Autor del Libro</p>
+                                <div>
+                                    <i class="bi bi-bookmark"></i>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <p>Autor del Libro</p>
+                                <div>
+                                    <p>$18</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-        
-                <div class="col">
-                    <div class="weather-card rain">
-                        <div class="top">
-                            <div class="wrapper">
-                                <div class="mynav">
-                                    <a href="javascript:;"><span class="lnr lnr-chevron-left"></span></a>
-                                    <a href="javascript:;"><span class="lnr lnr-cog"></span></a>
+            </section>
+
+            <!-- SECCION OFERTAS ESPECIALES -->
+            <section class="ofertas-especiales">
+                <h2>Ofertas Especiales</h2>
+                <div class="d-flex justify-content-between">
+                    <div class="col-3 card card-libro">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                            <img class="img-fluid rounded-3" src="https://s3.amazonaws.com/mm-static-media/books/cover-art/9780545349222.jpeg"
+                                alt="Card image cap" />
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </a>
+                        </div>
+                        <div class="card-body pt-2">
+                            <div class="d-flex justify-content-between">
+                                <p class="mb-2">Autor del Libro</p>
+                                <div>
+                                    <i class="bi bi-bookmark"></i>
                                 </div>
-                                <h1 class="heading">Rainy day</h1>
-                                <h3 class="location">Sylhet, Bangladesh</h3>
-                                <p class="temp">
-                                    <span class="temp-value">16</span>
-                                    <span class="deg">0</span>
-                                    <a href="javascript:;"><span class="temp-type">C</span></a>
-                                </p>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <p>Título del Libro</p>
+                                <div>
+                                    <p>$18</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="bottom">
-                            <div class="wrapper">
-                                <ul class="forecast">
-                                    <a href="javascript:;"><span class="lnr lnr-chevron-up go-up"></span></a>
-                                    <li class="active">
-                                        <span class="date">Yesterday</span>
-                                        <span class="lnr lnr-sun condition">
-                                            <span class="temp">22<span class="deg">0</span><span class="temp-type">C</span></span>
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <span class="date">Tomorrow</span>
-                                        <span class="lnr lnr-cloud condition">
-                                            <span class="temp">18<span class="deg">0</span><span class="temp-type">C</span></span>
-                                        </span>
-                                    </li>
-                                </ul>
+                    </div>
+                    <div class="col-3 card card-libro">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                            <img class="img-fluid rounded-3" src="https://s3.amazonaws.com/mm-static-media/books/cover-art/9780545349222.jpeg"
+                                alt="Card image cap" />
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </a>
+                        </div>
+                        <div class="card-body pt-2">
+                            <div class="d-flex justify-content-between">
+                                <p class="mb-2">Autor del Libro</p>
+                                <div>
+                                    <i class="bi bi-bookmark"></i>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <p>Autor del Libro</p>
+                                <div>
+                                    <p>$18</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 card card-libro">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                            <img class="img-fluid rounded-3" src="https://s3.amazonaws.com/mm-static-media/books/cover-art/9780545349222.jpeg"
+                                alt="Card image cap" />
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </a>
+                        </div>
+                        <div class="card-body pt-2">
+                            <div class="d-flex justify-content-between">
+                                <p class="mb-2">Autor del Libro</p>
+                                <div>
+                                    <i class="bi bi-bookmark"></i>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <p>Autor del Libro</p>
+                                <div>
+                                    <p>$18</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 card card-libro">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                            <img class="img-fluid rounded-3" src="https://s3.amazonaws.com/mm-static-media/books/cover-art/9780545349222.jpeg"
+                                alt="Card image cap" />
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </a>
+                        </div>
+                        <div class="card-body pt-2">
+                            <div class="d-flex justify-content-between">
+                                <p class="mb-2">Autor del Libro</p>
+                                <div>
+                                    <i class="bi bi-bookmark"></i>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <p>Autor del Libro</p>
+                                <div>
+                                    <p>$18</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <!-- SECCION OFERTAS ESPECIALES -->
-    <section class="ofertas-especiales">
-        <h1>Ofertas Especiales</h1>
-    </section>
-    
-    <!-- SECCION PRÓXIMAMENTE -->
-    <section class="ofertas-especiales">
-        <h1>Próximamente</h1>
-    </section>
-    
-    <!-- SECCION BANNER -->
-    <section class="banner">
-        <h1>BANNER</h1>
-    </section>
-    
-    <!-- SECCION NOTICIAS -->
-    <section class="news">
-        <h1>Noticias</h1>
-    </section>
+            <!-- SECCION PRÓXIMAMENTE -->
+            <section class="proximamente">
+                <h2>Próximamente</h2>
+                <div class="d-flex justify-content-between">
+                    <div class="col-3 card card-libro">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                            <img class="img-fluid rounded-3" src="https://s3.amazonaws.com/mm-static-media/books/cover-art/9780545349222.jpeg"
+                                alt="Card image cap" />
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </a>
+                        </div>
+                        <div class="card-body pt-2">
+                            <div class="d-flex justify-content-between">
+                                <p class="mb-2">Autor del Libro</p>
+                                <div>
+                                    <i class="bi bi-bookmark"></i>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <p>Título del Libro</p>
+                                <div>
+                                    <p>$18</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 card card-libro">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                            <img class="img-fluid rounded-3" src="https://s3.amazonaws.com/mm-static-media/books/cover-art/9780545349222.jpeg"
+                                alt="Card image cap" />
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </a>
+                        </div>
+                        <div class="card-body pt-2">
+                            <div class="d-flex justify-content-between">
+                                <p class="mb-2">Autor del Libro</p>
+                                <div>
+                                    <i class="bi bi-bookmark"></i>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <p>Autor del Libro</p>
+                                <div>
+                                    <p>$18</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 card card-libro">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                            <img class="img-fluid rounded-3" src="https://s3.amazonaws.com/mm-static-media/books/cover-art/9780545349222.jpeg"
+                                alt="Card image cap" />
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </a>
+                        </div>
+                        <div class="card-body pt-2">
+                            <div class="d-flex justify-content-between">
+                                <p class="mb-2">Autor del Libro</p>
+                                <div>
+                                    <i class="bi bi-bookmark"></i>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <p>Autor del Libro</p>
+                                <div>
+                                    <p>$18</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 card card-libro">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                            <img class="img-fluid rounded-3" src="https://s3.amazonaws.com/mm-static-media/books/cover-art/9780545349222.jpeg"
+                                alt="Card image cap" />
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </a>
+                        </div>
+                        <div class="card-body pt-2">
+                            <div class="d-flex justify-content-between">
+                                <p class="mb-2">Autor del Libro</p>
+                                <div>
+                                    <i class="bi bi-bookmark"></i>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <p>Autor del Libro</p>
+                                <div>
+                                    <p>$18</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-    <!-- SECCION AYUDA -->
-    <section class="news">
-        <h1>¿Necesitas ayuda en decidirte?</h1>
-        <p>lsdmlñmvlmdflñvmfñl</p>
-        <button>kdv k</button>
-    </section>
+            <!-- SECCION BANNER -->
+            <section class="banner">
+                <div>
+                    <h1>BANNER</h1>
+                </div>
+            </section>
 
-</main>
+            <!-- SECCION NOTICIAS -->
+            <section class="news">
+                <h2>Noticias</h2>
+            </section>
 
-<%- include('../partials/footer.ejs') %>
+            <!-- SECCION AYUDA -->
+            <section class="news text-center">
+                <h1>¿Necesitas ayuda en decidirte?</h1>
+                <h3>Nuestro motor de recomendaciones te llevará a tus libros perfectos</h3>
+                <button class="col-3 btn-comprar-ahora">Encontrá tu libro</button>
+            </section>
+
+        </main>
+
+        <%- include('../partials/footer.ejs') %>
