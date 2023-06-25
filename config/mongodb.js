@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import config from "./config/index.js";
+import config from "./index.js";
 
 mongoose.connect(config.DB)
 .then(db=>console.log('DB esta conectado'))
