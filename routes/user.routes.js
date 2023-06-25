@@ -24,7 +24,6 @@ router.post("/login",passport.authenticate("local-signin", {
     failureRedirect: "/login",
     failureFlash: true,
 }));
-
 //Cerrar sesion
 router.get('/logout', function(req, res, next) {
     req.logout(function(err) {
@@ -34,11 +33,28 @@ router.get('/logout', function(req, res, next) {
     });
 });
 
+//Favortios
+router.get('/favoritos',isAuthenticated,(req,res,next)=>{
+    res.render('users/favoritos.ejs')
+})
+
+//Recuperar
+router.get('/recuperar',isAuthenticated,(req,res,next)=>{
+    res.render('users/recuperar.ejs')
+})
+
+//Checkout
+router.get('/checkout',isAuthenticated,(req,res,next)=>{
+    res.render('users/checkout.ejs')
+})
+
+
 function isAuthenticated(req, res, next) {
     if(req.isAuthenticated()) {
         return next();
     }
-    res.redirect('/')
+    req.flash('error_msg','Por favor, logueate para ver la pagina')
+    res.redirect('/login')
 }
 
 export default router

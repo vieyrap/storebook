@@ -11,6 +11,7 @@ import session from 'express-session'
 import LocalStrategy from 'passport-local'
 import flash from 'connect-flash'
 import routerUser from './routes/user.routes.js'
+import routerIndex from './routes/index.routes.js'
 
 const app=express()
 
@@ -48,44 +49,11 @@ app.use((req,res,next)=>{
 
 //Rutas
 
-//Index 
-app.get('/',(req,res)=>{
-    res.render('pages/home.ejs')
-})
+//Rutas Generales
+app.use(routerIndex)
 
-//Buscar
-app.get('/buscar',(req,res)=>{
-    res.render('pages/buscar.ejs')
-})
-
-//Catalogo
-app.get('/catalogo',(req,res)=>{
-    res.render('pages/catalogo.ejs')
-})
-
-//Catalogo
-app.get('/nosotros',(req,res)=>{
-    res.render('pages/nosotros.ejs')
-})
-
-// Rutas usuarios
+// Rutas Userios
 app.use(routerUser)
-
-//Recuperar
-app.get('/recuperar',(req,res)=>{
-    res.render('users/recuperar.ejs')
-})
-
-//Favortios
-app.get('/favoritos',(req,res)=>{
-    res.render('users/favoritos.ejs')
-})
-
-//Checkout
-app.get('/checkout',(req,res)=>{
-    res.render('users/checkout.ejs')
-})
-
 
 //Cualquier url no definida envia este mensaje
 app.get('/*', (req,res)=>{
