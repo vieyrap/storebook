@@ -3,7 +3,8 @@
 
 <main>
     <h1 class="text-center mt-5 mb-3">Login</h1>
-    <div class="container w-25">  
+    <div class="container w-25">
+        <%-include('../partials/mensajes')-%>
         <form action="/login" method="post">
             <div class="form-group px-0">
                 <input type="email" name="email" class="form-control" placeholder="Ingrese su Email">

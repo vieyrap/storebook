@@ -22,23 +22,23 @@ router.get("/login", (req, res, next) => {
 router.post("/login",passport.authenticate("local-signin", {
     successRedirect: "/favoritos",
     failureRedirect: "/login",
-    failureFlash:'email o password invalidos. Intente nuevamente!!'
+    failureFlash: true,
 }));
 
 //Cerrar sesion
-router.post('/logout', function(req, res, next) {
+router.get('/logout', function(req, res, next) {
     req.logout(function(err) {
-      if (err) { return next(err); }
-      res.redirect('/');
+        if (err) { return next(err); }
+        req.flash('success_msg','Se cerro la sesion')
+        res.redirect('/login');
     });
-  });
-  
-  function isAuthenticated(req, res, next) {
+});
+
+function isAuthenticated(req, res, next) {
     if(req.isAuthenticated()) {
-      return next();
+        return next();
     }
-  
     res.redirect('/')
-  }
+}
 
 export default router

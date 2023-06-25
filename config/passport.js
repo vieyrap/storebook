@@ -24,7 +24,7 @@ passport.use("local-signup",new LocalStrategy(
             return done(
             null,
             false,
-            req.flash("signupMessage", "The Email is already Taken.")
+            req.flash('error_msg','El email ya se encuentra registrado')
         );
         } else {
             const newUser = new User();
@@ -46,13 +46,13 @@ passport.use("local-signin",new LocalStrategy(
     async (req, email, password, done) => {
         const user = await User.findOne({ email: email });
         if (!user) {
-            return done(null, false, req.flash("signinMessage", "No User Found"));
+            return done(null, false, req.flash('error_msg','No se encontró el usuario'));
         }
         if (!user.comparePassword(password)) {
             return done(
                 null,
                 false,
-                req.flash("signinMessage", "Incorrect Password")
+                req.flash('error_msg','Contraseña incorrecta')
             );
         }
         return done(null, user);

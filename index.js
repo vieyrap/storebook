@@ -30,6 +30,12 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 
+//current User
+app.use(function (req, res,next){
+    res.locals.currentUser = req.user;
+    next();
+})
+
 //Mensajes Flash
 app.use(flash())
 app.use((req,res,next)=>{
