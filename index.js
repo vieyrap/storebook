@@ -9,18 +9,23 @@ import cookieParser from 'cookie-parser'
 import session from 'express-session'
 import flash from 'connect-flash'
 import MongoStore from 'connect-mongo'
+import path from 'path'
+import { fileURLToPath } from 'url';
 import routerUser from './routes/user.routes.js'
 import routerIndex from './routes/index.routes.js'
 import mongoose from 'mongoose'
 
 const app=express()
+const __filename = fileURLToPath(import.meta.url);
 
+const __dirname = path.dirname(__filename);
 //Middleware
 app.use(morgan('dev'))//muestra el tiempo q tarda el req
 app.use(express.json())
 app.use(bodyParser.urlencoded({extended:true}))// Activo para poder analizar datos del URL / formularios
 app.set('view engine', 'ejs')//Plantilla
 app.use(express.static('public'))//Archivos estáticos
+app.set('views', path.join(__dirname, 'views')); 
 app.use(cookieParser('secreto'))//Para poder administrar las cookies
 
 app.use(session({
