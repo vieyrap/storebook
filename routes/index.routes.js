@@ -12,7 +12,7 @@ router.get('/',async (req,res)=>{
     try {
         const libros = await Libro.find({})
         // console.log(libros)
-        res.render('./pages/home.ejs',{listTitle: 'BookStore', libros:libros})
+        res.render('../pages/home.ejs',{listTitle: 'BookStore', libros:libros})
     } catch (error) {
         console.log(error.mensaje)
         res.status(500).json({mensaje:"Error interno del sistema"})
