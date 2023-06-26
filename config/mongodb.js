@@ -1,7 +1,19 @@
 import mongoose from "mongoose";
-import config from "./index.js";
+import dotenv from 'dotenv'
+dotenv.config()
 
-mongoose.connect(config.DB)
-.then(db=>console.log('DB esta conectado'))
-.catch(error=>console.log(error))
-//tipo fecht()
+const {MONGO_URL} = process.env
+
+const conectarDB = async () =>{
+    try {
+        await mongoose.connect(MONGO_URL,{
+            useNewUrlParser : true,
+            useUnifiedTopology : true,
+        })
+        console.log('DB esta conectado')
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+conectarDB()

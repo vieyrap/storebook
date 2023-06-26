@@ -5,7 +5,8 @@ import '../config/passport.js'
 let userScheme=new Schema({
     name:String,
     email:String,
-    password:String
+    password:String,
+    token:String
 })
 
 userScheme.methods.encryptPassword = (password) => {

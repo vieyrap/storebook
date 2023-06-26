@@ -1,13 +1,8 @@
 import { Schema, model } from "mongoose";
-import bcrypt from "bcrypt-nodejs";
-import "../config/passport.js";
 
 let libroScheme = new Schema({
     subcategories: {
         type: ["String"],
-    },
-    english_language_learner: {
-        type: "Boolean",
     },
     page_count: {
         type: "Number",
@@ -51,9 +46,12 @@ let libroScheme = new Schema({
     work_id: {
         type: "Number",
     },
+    precio: {
+        type: "Number",
+    },
     canonical_isbn: {
         type: "String",
-    },
+    }
 });
 
 export default model('Libro', libroScheme)

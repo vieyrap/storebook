@@ -6,304 +6,112 @@
             <section class="hero">
                 <div class="overlay-hero">
                     <h1>La tienda de libros más grande de Buenos Aires</h1>
-                    <button type="button" class="col-3 btn-comprar-ahora mt-4 ">Compra ya</button>
+                    <button type="button" class="col-3 btn-comprar-ahora mt-4">Compra ya</button>
                 </div>
             </section>
             <!-- SECCION TENDENCIAS -->
             <section class="tending-books">
                 <h2 class="titulo-seccion mb-4">Tendencias</h2>
                 <h3 class="titulo-seccion mb-4">Tendencias</h3>
-                <div class="d-flex justify-content-between">
-                    <div class="col-3 card card-libro">
-                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <img class="img-fluid rounded-3" src="https://s3.amazonaws.com/mm-static-media/books/cover-art/9780545349222.jpeg"
-                                alt="Card image cap" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                            </a>
-                        </div>
-                        <div class="card-body pt-2">
-                            <div class="d-flex justify-content-between">
-                                <p class="mb-2">Autor del Libro</p>
-                                <div>
-                                    <i class="bi bi-bookmark"></i>
+                <div class="d-flex flex-wrap justify-content-between clearfix">
+                    <% for(let i=4; i < 8; i++) { %>
+                        <div class="col-3 card card-libro">
+                            <div class="contenedor-imagen" data-mdb-ripple-color="light">
+                                <a href="/libros/<%= libros[i].canonical_isbn%>">
+                                    <img class="img-portada-libro rounded-2" src="<%= libros[i].cover_art_url %>"
+                                        alt="<%= libros[i].title %>" />
+                                </a>
+                            </div>
+                            <div class="card-body pt-2">
+                                <div class="d-flex justify-content-between">
+                                    <p class="mb-2">
+                                        <%= libros[i].authors %>
+                                    </p>
+                                    <div>
+                                        <i class="bi bi-bookmark"></i>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <h5>
+                                        <%= libros[i].title %>
+                                    </h5>
+                                    <div>
+                                        <p>$ <%= libros[i].precio %></p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="d-flex justify-content-between">
-                                <p>Título del Libro</p>
-                                <div>
-                                    <p>$18</p>
-                                </div>
-                            </div>
+                            <a href="/agregar-carrito/<%= libros[i].canonical_isbn %>" class="btn btn-comprar-ahora">Agregar al carrito</a>
                         </div>
-                    </div>
-                    <div class="col-3 card card-libro">
-                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <img class="img-fluid rounded-3" src="https://s3.amazonaws.com/mm-static-media/books/cover-art/9780545349222.jpeg"
-                                alt="Card image cap" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                            </a>
-                        </div>
-                        <div class="card-body pt-2">
-                            <div class="d-flex justify-content-between">
-                                <p class="mb-2">Autor del Libro</p>
-                                <div>
-                                    <i class="bi bi-bookmark"></i>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <p>Autor del Libro</p>
-                                <div>
-                                    <p>$18</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3 card card-libro">
-                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <img class="img-fluid rounded-3" src="https://s3.amazonaws.com/mm-static-media/books/cover-art/9780545349222.jpeg"
-                                alt="Card image cap" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                            </a>
-                        </div>
-                        <div class="card-body pt-2">
-                            <div class="d-flex justify-content-between">
-                                <p class="mb-2">Autor del Libro</p>
-                                <div>
-                                    <i class="bi bi-bookmark"></i>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <p>Autor del Libro</p>
-                                <div>
-                                    <p>$18</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3 card card-libro">
-                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <img class="img-fluid rounded-3" src="https://s3.amazonaws.com/mm-static-media/books/cover-art/9780545349222.jpeg"
-                                alt="Card image cap" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                            </a>
-                        </div>
-                        <div class="card-body pt-2">
-                            <div class="d-flex justify-content-between">
-                                <p class="mb-2">Autor del Libro</p>
-                                <div>
-                                    <i class="bi bi-bookmark"></i>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <p>Autor del Libro</p>
-                                <div>
-                                    <p>$18</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <% } %>
                 </div>
             </section>
 
             <!-- SECCION OFERTAS ESPECIALES -->
             <section class="ofertas-especiales">
                 <h2>Ofertas Especiales</h2>
-                <div class="d-flex justify-content-between">
-                    <div class="col-3 card card-libro">
-                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <img class="img-fluid rounded-3" src="https://s3.amazonaws.com/mm-static-media/books/cover-art/9780545349222.jpeg"
-                                alt="Card image cap" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                            </a>
-                        </div>
-                        <div class="card-body pt-2">
-                            <div class="d-flex justify-content-between">
-                                <p class="mb-2">Autor del Libro</p>
-                                <div>
-                                    <i class="bi bi-bookmark"></i>
-                                </div>
+                <div class="d-flex flex-wrap justify-content-between">
+                    <% for(let i=9; i < 13; i++) { %>
+                        <div class="col-3 card card-libro">
+                            <div class="contenedor-imagen" data-mdb-ripple-color="light">
+                                <img class="img-portada-libro rounded-2" src="<%= libros[i].cover_art_url %>"
+                                    alt="Card image cap" />
+                                <a href="#!">
+                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                </a>
                             </div>
-                            <div class="d-flex justify-content-between">
-                                <p>Título del Libro</p>
-                                <div>
-                                    <p>$18</p>
+                            <div class="card-body pt-2">
+                                <div class="d-flex justify-content-between">
+                                    <p class="mb-2">
+                                        <%= libros[i].authors %>
+                                    </p>
+                                    <div>
+                                        <i class="bi bi-bookmark"></i>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3 card card-libro">
-                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <img class="img-fluid rounded-3" src="https://s3.amazonaws.com/mm-static-media/books/cover-art/9780545349222.jpeg"
-                                alt="Card image cap" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                            </a>
-                        </div>
-                        <div class="card-body pt-2">
-                            <div class="d-flex justify-content-between">
-                                <p class="mb-2">Autor del Libro</p>
-                                <div>
-                                    <i class="bi bi-bookmark"></i>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <p>Autor del Libro</p>
-                                <div>
-                                    <p>$18</p>
+                                <div class="d-flex justify-content-between">
+                                    <h5>
+                                        <%= libros[i].title %>
+                                    </h5>
+                                    <div>
+                                        <p>$18</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-3 card card-libro">
-                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <img class="img-fluid rounded-3" src="https://s3.amazonaws.com/mm-static-media/books/cover-art/9780545349222.jpeg"
-                                alt="Card image cap" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                            </a>
-                        </div>
-                        <div class="card-body pt-2">
-                            <div class="d-flex justify-content-between">
-                                <p class="mb-2">Autor del Libro</p>
-                                <div>
-                                    <i class="bi bi-bookmark"></i>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <p>Autor del Libro</p>
-                                <div>
-                                    <p>$18</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3 card card-libro">
-                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <img class="img-fluid rounded-3" src="https://s3.amazonaws.com/mm-static-media/books/cover-art/9780545349222.jpeg"
-                                alt="Card image cap" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                            </a>
-                        </div>
-                        <div class="card-body pt-2">
-                            <div class="d-flex justify-content-between">
-                                <p class="mb-2">Autor del Libro</p>
-                                <div>
-                                    <i class="bi bi-bookmark"></i>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <p>Autor del Libro</p>
-                                <div>
-                                    <p>$18</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <% } %>
                 </div>
             </section>
 
             <!-- SECCION PRÓXIMAMENTE -->
             <section class="proximamente">
                 <h2>Próximamente</h2>
-                <div class="d-flex justify-content-between">
-                    <div class="col-3 card card-libro">
-                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <img class="img-fluid rounded-3" src="https://s3.amazonaws.com/mm-static-media/books/cover-art/9780545349222.jpeg"
-                                alt="Card image cap" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                            </a>
-                        </div>
-                        <div class="card-body pt-2">
-                            <div class="d-flex justify-content-between">
-                                <p class="mb-2">Autor del Libro</p>
-                                <div>
-                                    <i class="bi bi-bookmark"></i>
-                                </div>
+                <div class="d-flex flex-wrap justify-content-between">
+                    <% for(let i=14; i < 18; i++) { %>
+                        <div class="col-3 card card-libro">
+                            <div class="contenedor-imagen" data-mdb-ripple-color="light">
+                                <img class="img-portada-libro rounded-2" src="<%= libros[i].cover_art_url %>"
+                                    alt="Card image cap" />
+                                <a href="#!">
+                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                </a>
                             </div>
-                            <div class="d-flex justify-content-between">
-                                <p>Título del Libro</p>
-                                <div>
-                                    <p>$18</p>
+                            <div class="card-body pt-2">
+                                <div class="d-flex justify-content-between">
+                                    <p class="mb-2">
+                                        <%= libros[i].authors %>
+                                    </p>
+                                    <div>
+                                        <i class="bi bi-bookmark"></i>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3 card card-libro">
-                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <img class="img-fluid rounded-3" src="https://s3.amazonaws.com/mm-static-media/books/cover-art/9780545349222.jpeg"
-                                alt="Card image cap" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                            </a>
-                        </div>
-                        <div class="card-body pt-2">
-                            <div class="d-flex justify-content-between">
-                                <p class="mb-2">Autor del Libro</p>
-                                <div>
-                                    <i class="bi bi-bookmark"></i>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <p>Autor del Libro</p>
-                                <div>
-                                    <p>$18</p>
+                                <div class="d-flex justify-content-between">
+                                    <h5>
+                                        <%= libros[i].title %>
+                                    </h5>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-3 card card-libro">
-                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <img class="img-fluid rounded-3" src="https://s3.amazonaws.com/mm-static-media/books/cover-art/9780545349222.jpeg"
-                                alt="Card image cap" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                            </a>
-                        </div>
-                        <div class="card-body pt-2">
-                            <div class="d-flex justify-content-between">
-                                <p class="mb-2">Autor del Libro</p>
-                                <div>
-                                    <i class="bi bi-bookmark"></i>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <p>Autor del Libro</p>
-                                <div>
-                                    <p>$18</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3 card card-libro">
-                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <img class="img-fluid rounded-3" src="https://s3.amazonaws.com/mm-static-media/books/cover-art/9780545349222.jpeg"
-                                alt="Card image cap" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                            </a>
-                        </div>
-                        <div class="card-body pt-2">
-                            <div class="d-flex justify-content-between">
-                                <p class="mb-2">Autor del Libro</p>
-                                <div>
-                                    <i class="bi bi-bookmark"></i>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <p>Autor del Libro</p>
-                                <div>
-                                    <p>$18</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <% } %>
                 </div>
             </section>
 
