@@ -23,11 +23,12 @@ app.set('view engine', 'ejs')//Plantilla
 app.use(express.static('public'))//Archivos estáticos
 app.use(cookieParser('secreto'))//Para poder administrar las cookies
 
+const db = process.env.MONGO_URL
 app.use(session({
     secret:'secreto',
     resave:true,
     saveUninitialized:true,
-    store: MongoStore.create({ mongoUrl: 'mongodb+srv://vieyrap:1234@cluster0.umbirxo.mongodb.net/?retryWrites=true&w=majority'}),
+    store: MongoStore.create({ mongoUrl: db}),
     cookie: {maxAge: 180 * 60 * 1000}//3h
 }))//Express-session
 
