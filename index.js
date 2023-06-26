@@ -27,7 +27,7 @@ app.use(session({
     secret:'secreto',
     resave:true,
     saveUninitialized:true,
-    store: MongoStore.create({ mongoUrl: process.env.MONGO_URL}),
+    store: MongoStore.create({ mongoUrl: process.env.MONGO_URI}),
     cookie: {maxAge: 180 * 60 * 1000}//3h
 }))//Express-session
 
@@ -54,7 +54,7 @@ app.use((req,res,next)=>{
 //Variable generales 
 app.use(function(req, res, next){
     res.locals.login = req.isAuthenticated() //para poder verificar desde todas las rutas si el usuario esta logueado
-    res.locals.cart = req.session.cart // para ver las session
+    res.locals.session = req.session // para ver las session
     next()
 })
 
