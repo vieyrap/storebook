@@ -21,6 +21,7 @@ app.use(express.json())
 app.use(bodyParser.urlencoded({extended:true}))// Activo para poder analizar datos del URL / formularios
 app.set('view engine', 'ejs')//Plantilla
 app.use(express.static('public'))//Archivos estáticos
+app.set("views", "views")
 app.use(cookieParser('secreto'))//Para poder administrar las cookies
 
 app.use(session({
