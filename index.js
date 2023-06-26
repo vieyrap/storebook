@@ -27,7 +27,7 @@ app.use(session({
     secret:'secreto',
     resave:true,
     saveUninitialized:true,
-    store: MongoStore.create({ mongoUrl: process.env.MONGO_URL || 'mongodb+srv://vieyrap:<password>@cluster0.umbirxo.mongodb.net/?retryWrites=true&w=majority'}),
+    store: MongoStore.create({ mongoUrl: process.env.MONGO_URL}),
     cookie: {maxAge: 180 * 60 * 1000}//3h
 }))//Express-session
 
