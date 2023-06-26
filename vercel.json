@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "name": "bookstore",
+    "name": "book-store",
     "builds": [
        { "src": "index.js", "use": "@vercel/node" }
     ],
