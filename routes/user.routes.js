@@ -45,15 +45,31 @@ router.get('/favoritos',isAuthenticated,(req,res,next)=>{
     res.render('users/favoritos.ejs',{listTitle: 'BookStore | Favoritos'})
 })
 
+//Carrito de compras
+router.get('/carrito-compras',async(req,res,next)=>{
+    try {
+        if (!req.session.cart) {
+            return res.render('users/carrito-compras',{listTitle:'Carrito de Compras', libros : null})
+        } else{
+        // console.log(req.session.cart.items)
+        const cart = await new Cart(req.session.cart)       
+        const libros=Object.values(cart.items);//Obtengo array de libros
+        console.log(cart)
+        res.render('users/carrito-compras',{listTitle:'Carrito de Compras', libros : libros, precioTotal: cart.precioTotal, cantidadTotal: cart.cantidadTotal})
+    }
+    } catch (error) {
+        console.log(error.mensaje)
+        res.status(500).json({mensaje:"error interno del sistema"})
+    }
+})
+
 //Agregar carrito
 router.get('/agregar-carrito/:canonical_isbn',async (req,res)=>{
     try {
         const libro = await Libro.findOne({canonical_isbn:req.params.canonical_isbn})
-        // console.log(libro + 'desde carritp')
         const cart = new Cart(req.session.cart ? req.session.cart : {})
         cart.add(libro, libro.id)
         req.session.cart = cart
-        console.log(req.session.cart)
         res.redirect('/login')
         
     } catch (error) {
