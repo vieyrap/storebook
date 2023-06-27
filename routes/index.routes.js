@@ -34,11 +34,11 @@ router.get('/libros/:canonical_isbn',async (req,res)=>{
 
 //Buscar
 router.get('/buscador',(req,res)=>{
-    res.render('pages/buscardor.ejs',{listTitle: 'BookStore | Buscador'})
+    res.render('pages/buscador.ejs',{listTitle: 'BookStore | Buscador'})
 })
 
 router.post('/buscador',(req,res)=>{
-    res.render('pages/buscardor.ejs',{listTitle: 'BookStore | Buscador'})
+    res.render('pages/buscador.ejs',{listTitle: 'BookStore | Buscador'})
 })
 
 //Catalogo
