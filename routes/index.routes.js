@@ -34,21 +34,21 @@ router.get('/libros/:canonical_isbn',async (req,res)=>{
 
 //Buscar
 router.get('/buscador',(req,res)=>{
-    res.render('pages/buscardor.ejs')
+    res.render('pages/buscardor.ejs',{listTitle: 'BookStore | Buscador'})
 })
 
 router.post('/buscador',(req,res)=>{
-    res.render('pages/buscardor.ejs')
+    res.render('pages/buscardor.ejs',{listTitle: 'BookStore | Buscador'})
 })
 
 //Catalogo
 router.get('/catalogo',(req,res)=>{
-    res.render('pages/catalogo.ejs')
+    res.render('pages/catalogo.ejs',{listTitle: 'BookStore | Catalogo'})
 })
 
 //Nosotros
 router.get('/nosotros',(req,res)=>{
-    res.render('pages/nosotros.ejs')
+    res.render('pages/nosotros.ejs',{listTitle: 'BookStore | Nosotros'})
 })
 
 export default router
